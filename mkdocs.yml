@@ -1,1 +1,83 @@
-site_name: My Docs
+site_name: shebik | Programmer
+site_url: https://shebik.dev
+site_author: shebik
+site_description: Full Stack Developer & Problem Solver
+
+# Theme configuration
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.integrate
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+# Extra CSS and JS
+extra_css:
+  - css/custom.css
+
+extra_javascript:
+  - js/custom.js
+
+# Plugins
+plugins:
+  - search
+  - git-committers:
+      enabled: true
+      repository: github.com/shebik
+  - minify:
+      minify_html: true
+
+# Navigation
+nav:
+  - Home: index.md
+  - Skills: skills.md
+  - Projects: projects.md
+  - Contact: contact.md
+
+# Page tree
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/shebik
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/shebik
+      name: LinkedIn
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/shebik
+      name: Twitter
+    - icon: fontawesome/brands/stack-overflow
+      link: https://stackoverflow.com/users/shebik
+      name: Stack Overflow
+    - icon: fontawesome/solid/envelope
+      link: mailto:hello@shebik.dev
+      name: Email
+
+# Copyright
+copyright: Copyright &copy; 2023 shebik. All code is poetry.
