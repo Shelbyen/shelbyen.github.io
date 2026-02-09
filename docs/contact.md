@@ -40,3 +40,4 @@ pie title Current Availability
     "Open for Contracts" : 40
     "Active Projects" : 50
     "Consultation" : 10
+```
