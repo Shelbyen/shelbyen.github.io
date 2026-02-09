@@ -21,8 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,12 +33,6 @@ jobs:
         run: pip install --no-cache-dir -r requirements.txt
       - name: Build pages
         run: mkdocs build
-
-  # Deployment job
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy Page
         run: mkdocs gh-deploy --force --remote-branch gh-pages # Deploys to the gh-pages branch
         env:
