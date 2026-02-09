@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,7 +33,14 @@ jobs:
         run: pip install --no-cache-dir -r requirements.txt
       - name: Build pages
         run: mkdocs build
-      - name: Deploy Page
-        run: mkdocs gh-deploy --force --remote-branch gh-pages # Deploys to the gh-pages branch
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
