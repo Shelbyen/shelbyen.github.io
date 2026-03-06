@@ -27,57 +27,18 @@ theme:
     - navigation.top
     - toc.integrate
 
-markdown_extensions:
-  - attr_list
-  - md_in_html
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-
-
-# Extra CSS and JS
-extra_css:
-  - css/custom.css
-
-extra_javascript:
-  - js/custom.js
-
-# Plugins
-plugins:
-  - search
-  - git-committers:
-      enabled: true
-      repository: github.com/shebik
-  - minify:
-      minify_html: true
-
 # Navigation
-nav:
-  - Home: index.md
-  - Skills: skills.md
-  - Projects: projects.md
-  - Contact: contact.md
+site_name: Мое Портфолио
 
-# Page tree
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/shebik
-      name: GitHub
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/shebik
-      name: LinkedIn
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/shebik
-      name: Twitter
-    - icon: fontawesome/brands/stack-overflow
-      link: https://stackoverflow.com/users/shebik
-      name: Stack Overflow
-    - icon: fontawesome/solid/envelope
-      link: mailto:hello@shebik.dev
-      name: Email
+nav:
+  - Главная: index.md
+  - Об авторе: about.md
+  - Лабораторные работы:
+      - Лабораторная 1: labs/lab1.md
+      # - Лабораторная 2: labs/lab2.md
+      # - Лабораторная 3: labs/lab3.md
+      # - Лабораторная 4: labs/lab4.md
+      # - Лабораторная 5: labs/lab5.md
 
 # Copyright
 copyright: Copyright &copy; 2023 shebik. All code is poetry.
